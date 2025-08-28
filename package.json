@@ -1,0 +1,49 @@
+{
+  "name": "@f4team-cn/vite-plugin-vortex-provider",
+  "version": "1.0.1",
+  "description": "Of vortex provider vite plugin.",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "vortex"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/f4team-cn/vite-plugin-vortex-provider"
+  },
+  "homepage": "https://github.com/f4team-cn/vite-plugin-vortex-provider",
+  "bugs": {
+    "email": "team@f4team.cn",
+    "url": "https://github.com/f4team-cn/vite-plugin-vortex-provider/issues"
+  },
+  "types": "./dist/main.d.ts",
+  "main": "./dist/vite-plugin-vortex-provider.cjs",
+  "module": "./dist/vite-plugin-vortex-provider.js",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/vite-plugin-vortex-provider.js",
+      "require": "./dist/vite-plugin-vortex-provider.cjs"
+    }
+  },
+  "dependencies": {
+    "archiver": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/node": "^24.3.0",
+    "prettier": "^3.6.2",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
