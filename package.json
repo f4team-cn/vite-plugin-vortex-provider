@@ -1,6 +1,6 @@
 {
   "name": "@f4team-cn/vite-plugin-vortex-provider",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Of vortex provider vite plugin.",
   "type": "module",
   "scripts": {

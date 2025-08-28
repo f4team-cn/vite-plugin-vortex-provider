@@ -24,7 +24,27 @@ export default function vortexProviderPlugin(manifest: ProviderManifest): Plugin
 
   return {
     name: 'vite-plugin-vortex-provider',
-    apply: 'build',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url === '/__vortex_provider_manifest__') {
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify(manifest, null, 4));
+          return;
+        }
+        next();
+      });
+    },
+
+    configurePreviewServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url === '/__vortex_provider_manifest__') {
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify(manifest, null, 4));
+          return;
+        }
+        next();
+      });
+    },
 
     configResolved(config: ResolvedConfig) {
       resolvedOutDir = config.build.outDir;
